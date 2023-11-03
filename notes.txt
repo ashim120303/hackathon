@@ -1,0 +1,3 @@
+DB: hackathon_db
+User: username
+Password: password	
