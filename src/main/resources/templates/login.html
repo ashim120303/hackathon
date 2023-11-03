@@ -11,10 +11,10 @@
     <div class="wrapper">
       <header class="header">
         <div class="header__container">
-          <a href="/index.html" class="logo">IJBH</a>
+          <a href="/index" class="logo">IJBH</a>
           <nav class="header__menu menu">
             <ul class="menu__list">
-              <li><a href="/index.html" class="menu__link">Главная</a></li>
+              <li><a href="/index" class="menu__link">Главная</a></li>
               <li><a href="#" class="menu__link">О нас</a></li>
               <li><a href="#" class="menu__link">Связанное</a></li>
               <li><a href="#" class="menu__link">Контакты</a></li>
@@ -27,14 +27,14 @@
           <div class="div"></div>
           <div class="main__form form">
             <form class="form__body" action="/login" method="post">
-
+               <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
                <label class="form__label">
                 Email или логин
-                <input class="form__input" type="email" name="email" placeholder="Введите ваш email или логин" />
+                <input class="form__input" type="email" name="username" placeholder="Введите email" />
               </label>
               <label class="form__label">
                 Пароль
-                <input class="form__input" type="password" name="password" placeholder="Введите ваш пароль" />
+                <input class="form__input" type="password" name="password" placeholder="Введите пароль" />
               </label>
               <div class="form__buttons">
                 <button class="form__button" type="submit">Авторизоваться</button>

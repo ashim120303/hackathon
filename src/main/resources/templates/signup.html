@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,7 +14,7 @@
           <a href="#" class="logo">IJBH</a>
           <nav class="header__menu menu">
             <ul class="menu__list">
-              <li><a href="/index.html" class="menu__link">Главная</a></li>
+              <li><a href="/index" class="menu__link">Главная</a></li>
               <li><a href="" class="menu__link">О нас</a></li>
               <li><a href="" class="menu__link">Связанное</a></li>
               <li><a href="" class="menu__link">Контакты</a></li>
@@ -25,18 +25,18 @@
       <main class="main">
         <div class="main__container">
           <div class="main__form form">
-            <form class="form__body" action="/signup" method="post">
+            <form class="form__body" th:action="@{/signup}" th:object="${user}" method="post">
                <label class="form__label">
                 ФИО
-                <input class="form__input" type="name" name="name" placeholder="Введите ваше ФИО" />
+                <input class="form__input" type="text" name="fullName" placeholder="Введите ваше ФИО" th:field="*{fullName}" required>
               </label>
                <label class="form__label">
                 Email
-                <input class="form__input" type="email" name="email" placeholder="Введите ваш email" />
+                <input class="form__input" type="email" name="email" placeholder="Введите ваш email" th:field="*{email}" required>
               </label>
               <label class="form__label">
                 Пароль
-                <input class="form__input" type="password" name="password" placeholder="Придумайте пароль" />
+                <input class="form__input" type="password" name="password" placeholder="Придумайте пароль"  th:field="*{password}" required>
               </label>
               <div class="form__buttons">
                 <button class="form__button" type="submit">Зарегистрироваться</button>
