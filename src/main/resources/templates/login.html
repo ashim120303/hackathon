@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in</title>
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container">
+          <a href="/index.html" class="logo">IJBH</a>
+          <nav class="header__menu menu">
+            <ul class="menu__list">
+              <li><a href="/index.html" class="menu__link">Главная</a></li>
+              <li><a href="#" class="menu__link">О нас</a></li>
+              <li><a href="#" class="menu__link">Связанное</a></li>
+              <li><a href="#" class="menu__link">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main class="main">
+        <div class="main__container">
+          <div class="div"></div>
+          <div class="main__form form">
+            <form class="form__body" action="/login" method="post">
+
+               <label class="form__label">
+                Email или логин
+                <input class="form__input" type="email" name="email" placeholder="Введите ваш email или логин" />
+              </label>
+              <label class="form__label">
+                Пароль
+                <input class="form__input" type="password" name="password" placeholder="Введите ваш пароль" />
+              </label>
+              <div class="form__buttons">
+                <button class="form__button" type="submit">Авторизоваться</button>
+                <a href="/signup" class="form__button-signup">Зарегистрироваться?</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>

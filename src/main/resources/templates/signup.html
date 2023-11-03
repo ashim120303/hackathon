@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/signup.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container">
+          <a href="#" class="logo">IJBH</a>
+          <nav class="header__menu menu">
+            <ul class="menu__list">
+              <li><a href="/index.html" class="menu__link">Главная</a></li>
+              <li><a href="" class="menu__link">О нас</a></li>
+              <li><a href="" class="menu__link">Связанное</a></li>
+              <li><a href="" class="menu__link">Контакты</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main class="main">
+        <div class="main__container">
+          <div class="main__form form">
+            <form class="form__body" action="/signup" method="post">
+               <label class="form__label">
+                ФИО
+                <input class="form__input" type="name" name="name" placeholder="Введите ваше ФИО" />
+              </label>
+               <label class="form__label">
+                Email
+                <input class="form__input" type="email" name="email" placeholder="Введите ваш email" />
+              </label>
+              <label class="form__label">
+                Пароль
+                <input class="form__input" type="password" name="password" placeholder="Придумайте пароль" />
+              </label>
+              <div class="form__buttons">
+                <button class="form__button" type="submit">Зарегистрироваться</button>
+                <a href="/login" class="form__button-return">Вернуться</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+  </body>
+</html>
