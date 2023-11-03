@@ -1,103 +1,82 @@
-body {
-    font-family: sans-serif;
-    font-size: 16px;
-    background-color: #e9e4f0;
-  }
+.main {
+  flex: 1 1 auto;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+}
 
-  .wrapper {
-    min-height: 100%;
-    overflow: clip;
-    display: flex;
-    flex-direction: column;
-  }
+.main__container {
+  display: flex;
+  align-items: center;
+}
 
-  [class*='__container'] {
-    width: min(100% - 30px, 1200px);
-    margin-inline: auto;
-  }
+.form {
+  padding: 15px;
+  color: #444;
+}
 
-  .header {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 10px 0;
-  }
+.form__body > *:not(:last-child) {
+  margin-bottom: 30px;
+}
 
-  .header__container {
-    min-height: 45px;
-    display: flex;
-    align-items: center;
-    gap: 25px;
-  }
+.form__label {
+  display: grid;
+  gap: 10px;
+}
 
-  .logo {
-    font-size: 28px;
-    font-weight: 700;
-  }
+.form__input {
+  width: 100%;
+  border: 2px solid;
+  background: transparent;
+  padding: 0 10px;
+  height: 40px;
+  color: #000;
+}
 
-  .menu__list {
-    display: flex;
-    gap: 25px;
-  }
+.form__buttons {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 25px;
+}
 
-  .menu__link:hover {
-    text-decoration: underline;
-  }
+.form__button {
+  padding: 8px 20px;
+  border: 2px solid;
+  font-weight: 700;
+  transition: color .3s;
+}
 
-  .main {
-    flex: 1 1 auto;
-    height: 100dvh;
-  }
+.form__button-return {
+  padding-bottom: 5px;
+  transition: color .3s;
+}
+
+.form__button:hover,
+.form__button-return:hover {
+  color: #000;
+}
+
+
+@media (max-width: 767px) {
 
   .main__container {
-    display: flex;
-    align-items: center;
-    height: 100%;
-  }
-  .form {
-    padding: 15px;
-    flex: 0 0 35%;
-    color: #444;
+    padding-top: 75px;
+    flex-direction: column;
   }
 
-  .form__body > *:not(:last-child) {
-    margin-bottom: 30px;
-  }
-  .form__label {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .form__input {
+  .main__container > * {
+    flex: 1 1 auto;
     width: 100%;
-    border: 1px solid;
-    background-color: transparent;
-    padding: 0 10px;
-    height: 40px;
-    color: #000;
   }
 
   .form__buttons {
     display: flex;
-    align-items: end;
-    justify-content: space-between;
-    gap: 10px;
+    flex-direction: column;
   }
 
   .form__button {
-    padding: 8px 20px;
-    border: 2px solid;
-    font-weight: 700;
-    transition: color .3s;
+    width: 100%;
   }
 
-
-  .form__button-return {
-    transition: color .3s;
-  }
-
-  .form__button:hover,
-  .form__button-return:hover {
-    color: #000;
-  }
+}

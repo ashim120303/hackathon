@@ -1,90 +1,47 @@
-body {
-  font-family: sans-serif;
-  font-size: 16px;
-  background-color: #e9e4f0;
-}
-
-.wrapper {
-  min-height: 100%;
-  overflow: clip;
-  display: flex;
-  flex-direction: column;
-}
-
-[class*='__container'] {
-  width: min(100% - 30px, 1200px);
-  margin-inline: auto;
-}
-
-.header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 10px 0;
-}
-
-.header__container {
-  min-height: 45px;
-  display: flex;
-  align-items: center;
-  gap: 25px;
-}
-
-.logo {
-  font-size: 28px;
-  font-weight: 700;
-}
-
-.menu__list {
-  display: flex;
-  gap: 25px;
-}
-
-.menu__link:hover {
-  text-decoration: underline;
-}
-
 .main {
   flex: 1 1 auto;
-  height: 100dvh;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .main__container {
   display: flex;
   align-items: center;
-  height: 100%;
 }
+
 .div{
-  flex: 0 0 65%;
+  flex: 0 1 100%;
 }
+
 .form {
   padding: 15px;
   flex: 0 0 35%;
+  color: #444;
 }
 
 .form__body > *:not(:last-child) {
   margin-bottom: 30px;
 }
+
 .form__label {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 10px;
 }
+
 .form__input {
   width: 100%;
-  border: 1px solid;
-  background-color: transparent;
+  border: 2px solid;
   padding: 0 10px;
   height: 40px;
+  color: #000;
 }
 
 .form__buttons {
   display: flex;
   align-items: end;
   justify-content: space-between;
-  gap: 10px;
-  color: #444;
+  gap: 25px;
 }
 
 .form__button {
@@ -94,12 +51,35 @@ body {
   transition: color .3s;
 }
 
-
 .form__button-signup {
+  padding-bottom: 5px;
   transition: color .3s;
+  width: fit-content;
 }
 
 .form__button:hover,
 .form__button-signup:hover {
   color: #000;
+}
+
+@media (max-width: 767px) {
+  .main__container {
+    padding-top: 75px;
+    flex-direction: column;
+  }
+
+  .main__container > * {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .form__buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form__button {
+    width: 100%;
+  }
+
 }

@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif;
+  background-color: #e9e4f0;
 }
 
 .wrapper {
@@ -12,4 +13,56 @@ body {
 [class*='__container'] {
   width: min(100% - 30px, 1200px);
   margin-inline: auto;
+}
+
+/* ---------------- */
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+}
+
+.header__container {
+  min-height: 45px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.menu__list {
+  display: flex;
+  gap: 25px;
+}
+
+.menu__link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 512px) {
+  .header {
+    background-color: #000;
+    color: #e9e4f0;
+  }
+
+  .header__container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu__list {
+    font-size: 14px;
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
 }
