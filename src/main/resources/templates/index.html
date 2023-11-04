@@ -10,40 +10,40 @@
 <body>
 <div class="wrapper">
     <header class="header">
-        <!-- ... your header content ... -->
+        <div class="header__container">
+            <a href="/" class="logo">IJBH</a>
+            <nav class="header__menu menu">
+                <ul class="menu__list">
+                    <li><a href="/" class="menu__link">Главная</a></li>
+                    <li><a href="" class="menu__link">О нас</a></li>
+                    <li><a href="" class="menu__link">Связанное</a></li>
+                </ul>
+                <div class="menu__buttons">
+                    <a href="login.html" class="menu__button">Вход</a>
+                    /
+                    <a href="signup.html" class="menu__button">Регистрация</a>
+                </div>
+            </nav>
+        </div>
     </header>
     <main class="page">
-        <div th:unless="${#lists.isEmpty(tenders)}">
-            <table>
-                <thead>
-                <tr>
-                    <th>Number</th>
-                    <th>Company Name</th>
-                    <th>Purchase Name</th>
-                    <th>Planned Amount</th>
-                    <th>Date Published</th>
-                    <th>Bids Submission Deadline</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="tender : ${tenders}">
-                    <td th:text="${tender.number}">Number</td>
-                    <td th:text="${tender.companyName}">Company Name</td>
-                    <td th:text="${tender.purchaseName}">Purchase Name</td>
-                    <td th:text="${tender.plannedAmount}">Planned Amount</td>
-                    <td th:text="${tender.datePublished}">Date Published</td>
-                    <td th:text="${tender.bidsSubmissionDeadline}">Bids Submission Deadline</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div th:if="${#lists.isEmpty(tenders)}">
-            <p>No tenders available.</p>
-        </div>
+        <main class="page">
+            <div th:unless="${#lists.isEmpty(tenders)}">
+                <div th:each="tender : ${tenders}" class="tender">
+                    <div class="tender__number"><span>Number:</span> <span th:text="${tender.number}"></span></div>
+                    <div class="tender__companyName"><span>Company Name:</span> <span th:text="${tender.companyName}"></span></div>
+                    <div class="tender__purchaseName"><span>Purchase Name:</span> <span th:text="${tender.purchaseName}"></span></div>
+                    <div class="tender__plannedAmount"><span>Planned Amount:</span> <span th:text="${tender.plannedAmount}"></span></div>
+                    <div class="tender__datePublished"><span>Date Published:</span> <span th:text="${tender.datePublished}"></span></div>
+                    <div class="tender__bidsSubmissionDeadline"><span>Bids Submission Deadline:</span> <span th:text="${tender.bidsSubmissionDeadline}"></span></div>
+                </div>
+            </div>
+            <div th:if="${#lists.isEmpty(tenders)}">
+                <p>No tenders available.</p>
+            </div>
+        </main>
     </main>
-    <footer class="footer">
-        <!-- ... your footer content ... -->
-    </footer>
+    <footer class="footer">Footer</footer>
 </div>
 <script src="/js/main.js"></script>
 </body>
