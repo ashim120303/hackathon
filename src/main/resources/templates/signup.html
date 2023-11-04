@@ -1,52 +1,74 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="/css/reset.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/signup.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <header class="header">
-        <div class="header__container">
-          <a href="/" class="logo"><span>State</span>Tenders</a>
-          <nav class="header__menu menu">
-            <ul class="menu__list">
-              <li><a href="/" class="menu__link">Главная</a></li>
-              <li><a href="" class="menu__link">О нас</a></li>
-              <li><a href="" class="menu__link">Связанное</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <main class="main">
-        <div class="main__container">
-          <div class="main__form form">
-            <form class="form__body" th:action="@{/signup}" th:object="${user}" method="post">
-               <label class="form__label">
-                ФИО
-                <input class="form__input" type="text" name="fullName" placeholder="Введите ваше ФИО" th:field="*{fullName}" required>
-              </label>
-               <label class="form__label">
-                Email
-                <input class="form__input" type="email" name="email" placeholder="Введите ваш email" th:field="*{email}" required>
-              </label>
-              <label class="form__label">
-                Пароль
-                <input class="form__input" type="password" name="password" placeholder="Придумайте пароль"  th:field="*{password}" required>
-              </label>
-              <div class="form__buttons">
-                <button class="form__button" type="submit">Зарегистрироваться</button>
-                <a href="/login" class="form__button-return">Вернуться</a>
-              </div>
-            </form>
-          </div>
-        </div>
-      </main>
-      <footer class="footer"></footer>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="/css/reset.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/signup.css" />
+</head>
+<body>
+<div class="wrapper">
+  <header class="header">
+    <div class="header__container">
+      <a href="/" class="logo"><span>State</span>Tenders</a>
+      <a href="#" class="menu__link">О нас</a>
     </div>
-  </body>
+  </header>
+  <main class="main">
+    <div class="main__container">
+      <div class="main__form form">
+        <form
+                class="form__body"
+                th:action="@{/signup}"
+                th:object="${user}"
+                method="post"
+        >
+          <label class="form__label">
+            ФИО
+            <input
+                    class="form__input"
+                    type="text"
+                    name="fullName"
+                    placeholder="Введите ваше ФИО"
+                    th:field="*{fullName}"
+                    required
+            />
+          </label>
+          <label class="form__label">
+            Email
+            <input
+                    class="form__input"
+                    type="email"
+                    name="email"
+                    placeholder="Введите ваш email"
+                    th:field="*{email}"
+                    required
+            />
+          </label>
+          <label class="form__label">
+            Пароль
+            <input
+                    class="form__input"
+                    type="password"
+                    name="password"
+                    placeholder="Придумайте пароль"
+                    th:field="*{password}"
+                    required
+            />
+          </label>
+          <div class="form__buttons">
+            <button class="form__button" type="submit">
+              Зарегистрироваться
+            </button>
+            <a href="/login" class="form__button-return">Вернуться</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+</div>
+</body>
 </html>
