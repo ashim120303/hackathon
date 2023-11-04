@@ -1,9 +1,26 @@
+.body {
+  color: #999;
+}
+
 .main {
-  flex: 1 1 auto;
   min-height: 100%;
+  flex: 1 1 auto;
   display: flex;
   align-items: center;
+  background-color: #101828;
+  background-image: url(../images/object1.png), url(../images/object2.png);
+  background-repeat: no-repeat;
+  background-size: 750px;
+  background-attachment: fixed;
+  animation: anima 20s ease infinite;
 }
+
+@keyframes anima {
+  0% {background-position: -75% 0%, 175% 0%;}
+  50% {background-position: 200% 100%, -100% 100%;}
+  100% {background-position: 0% 0%, 100% 0%;}
+}
+
 
 .main__container {
   display: flex;
@@ -17,7 +34,9 @@
 .form {
   padding: 15px;
   flex: 0 0 35%;
-  color: #444;
+  background-color: rgba(217, 217, 217, 0.1);
+  backdrop-filter: blur(12px);
+  color: #999;
 }
 
 .form__body > *:not(:last-child) {
@@ -34,7 +53,6 @@
   border: 2px solid;
   padding: 0 10px;
   height: 40px;
-  color: #000;
 }
 
 .form__buttons {
@@ -59,7 +77,7 @@
 
 .form__button:hover,
 .form__button-signup:hover {
-  color: #000;
+  color: #fff;
 }
 
 @media (max-width: 767px) {

@@ -31,6 +31,8 @@ public class SecurityConfig {
                                 "/css/signup.css",
                                 "/css/reset.css",
                                 "/js/main.js",
+                                "/images/object1.png",
+                                "/images/object2.png",
                                 "/login").permitAll()
                         .anyRequest().authenticated()
                 )
