@@ -1,8 +1,22 @@
+body {
+  background: linear-gradient(to top, #101828, #472477);
+  color: #999;
+}
+
+.header {
+  color: #999;
+}
+
 .main {
-  flex: 1 1 auto;
   min-height: 100%;
+  flex: 1 1 auto;
   display: flex;
   align-items: center;
+  background-image: url(../images/object1.png), url(../images/object2.png);
+  background-size: 750px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  animation: anima 20s ease infinite;
 }
 
 .main__container {
@@ -10,14 +24,17 @@
   align-items: center;
 }
 
-.div{
+.main__content {
   flex: 0 1 100%;
 }
 
 .form {
-  padding: 15px;
+  padding: 75px 25px;
   flex: 0 0 35%;
-  color: #444;
+  border: 1px solid;
+  margin-right: 40px;
+  background: rgba(217, 217, 217, 0.1);
+  backdrop-filter: blur(12px);
 }
 
 .form__body > *:not(:last-child) {
@@ -31,10 +48,10 @@
 
 .form__input {
   width: 100%;
-  border: 2px solid;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
   padding: 0 10px;
   height: 40px;
-  color: #000;
 }
 
 .form__buttons {
@@ -48,30 +65,84 @@
   padding: 8px 20px;
   border: 2px solid;
   font-weight: 700;
-  transition: color .3s;
+  transition: color 0.3s;
 }
 
 .form__button-signup {
   padding-bottom: 5px;
-  transition: color .3s;
+  transition: color 0.3s;
   width: fit-content;
 }
 
 .form__button:hover,
 .form__button-signup:hover {
-  color: #000;
+  color: #fff;
+}
+
+.main__image {
+  max-width: 450px;
+  margin-left: 40px;
+}
+.main__image img {
+  width: 100%;
+  animation: scale 10s ease infinite;
+}
+
+@media (max-width: 1099px) {
+
+  .main__container {
+    margin-bottom: 100px;
+  }
+
+  .main__content {
+    flex: 1 1 100%;
+  }
+
+  .main__image {
+    margin: 0;
+  }
+
+  .form {
+    margin: 20px 0;
+    overflow: scroll;
+  }
+
+}
+
+@media (max-width: 998px) {
+
+  body {
+    background: #101828;
+  }
+
+  .header {
+    background: rgba(0, 0, 0, .5);
+  }
+
+  .main__container {
+    padding: 45px 0;
+    margin-bottom: 25px;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .form {
+    position: absolute;
+    top: 25%;
+    flex: 1 1 auto;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+  }
+
+  .main,
+  .main__image img {
+    animation: none;
+  }
+
 }
 
 @media (max-width: 767px) {
-  .main__container {
-    padding-top: 75px;
-    flex-direction: column;
-  }
-
-  .main__container > * {
-    flex: 1 1 auto;
-    width: 100%;
-  }
 
   .form__buttons {
     display: flex;
@@ -82,4 +153,16 @@
     width: 100%;
   }
 
+}
+
+@keyframes anima {
+  0% {background-position: -75% 0%, 175% 0%;}
+  50% {background-position: 200% 100%, -100% 100%;}
+  100% {background-position: -75% 0%, 175% 0%;}
+}
+
+@keyframes scale {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.1);}
+  100% {transform: scale(1);}
 }

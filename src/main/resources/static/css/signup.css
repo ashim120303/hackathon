@@ -1,8 +1,22 @@
+body {
+  background: linear-gradient(to top, #101828, #472477);
+  color: #999;
+}
+
+.header {
+  color: #999;
+}
+
 .main {
-  flex: 1 1 auto;
   min-height: 100%;
+  flex: 1 1 auto;
   display: flex;
   align-items: center;
+  background-image: url(../images/object1.png), url(../images/object2.png);
+  background-size: 750px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  animation: anima 20s ease infinite;
 }
 
 .main__container {
@@ -11,8 +25,12 @@
 }
 
 .form {
-  padding: 15px;
-  color: #444;
+  padding: 45px 25px;
+  flex: 0 0 35%;
+  border: 1px solid;
+  margin-right: 40px;
+  background: rgba(217, 217, 217, 0.1);
+  backdrop-filter: blur(12px);
 }
 
 .form__body > *:not(:last-child) {
@@ -26,16 +44,15 @@
 
 .form__input {
   width: 100%;
-  border: 2px solid;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
   padding: 0 10px;
   height: 40px;
-  color: #000;
 }
 
 .form__buttons {
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: space-between;
   gap: 25px;
 }
@@ -54,21 +71,10 @@
 
 .form__button:hover,
 .form__button-return:hover {
-  color: #000;
+  color: #fff;
 }
 
-
 @media (max-width: 767px) {
-
-  .main__container {
-    padding-top: 75px;
-    flex-direction: column;
-  }
-
-  .main__container > * {
-    flex: 1 1 auto;
-    width: 100%;
-  }
 
   .form__buttons {
     display: flex;
@@ -79,4 +85,10 @@
     width: 100%;
   }
 
+}
+
+@keyframes anima {
+  0% {background-position: -75% 0%, 175% 0%;}
+  50% {background-position: 200% 100%, -100% 100%;}
+  100% {background-position: -75% 0%, 175% 0%;}
 }
