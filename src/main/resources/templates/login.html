@@ -18,14 +18,19 @@
               <li><a href="/" class="menu__link">Главная</a></li>
               <li><a href="#" class="menu__link">О нас</a></li>
               <li><a href="#" class="menu__link">Связанное</a></li>
-              <li><a href="#" class="menu__link">Контакты</a></li>
             </ul>
           </nav>
         </div>
       </header>
       <main class="main">
         <div class="main__container">
-          <div class="div"></div>
+          <div class="main__content">
+            <div class="main__body">
+              <div class="main__image">
+                <img src="images/decor-login.png" alt="decor" />
+              </div>
+            </div>
+          </div>
           <div class="main__form form">
             <form class="form__body" action="/login" method="post">
                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />

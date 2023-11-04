@@ -24,6 +24,7 @@ body {
   left: 0;
   padding: 10px 0;
   color: #999;
+  z-index: 3;
 }
 
 .header__container {
@@ -43,16 +44,15 @@ body {
   gap: 25px;
 }
 
+.menu__link {
+  transition: color .3s;
+}
+
 .menu__link:hover {
-  text-decoration: underline;
+  color: #fff;
 }
 
 @media (max-width: 512px) {
-  .header {
-    background-color: #000;
-    color: #e9e4f0;
-  }
-
   .header__container {
     flex-direction: column;
     gap: 15px;
