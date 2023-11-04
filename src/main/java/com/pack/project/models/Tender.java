@@ -16,7 +16,6 @@ public class Tender {
 
     private String number;
     private String companyName;
-    private String procurementType;
     private String purchaseName;
     private String plannedAmount;
     private String datePublished;
@@ -49,14 +48,6 @@ public class Tender {
 
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
-    }
-
-    public String getProcurementType() {
-        return procurementType;
-    }
-
-    public void setProcurementType(String procurementType) {
-        this.procurementType = procurementType;
     }
 
     public String getPurchaseName() {
