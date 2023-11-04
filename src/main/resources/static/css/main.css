@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif;
-  background: linear-gradient(to top, #101828, #472477);
+  background: #101828;
+
   color: #999;
 }
 
@@ -9,6 +10,7 @@ body {
   overflow: clip;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(to right, #101828, #472477);
 }
 
 [class*='__container'] {
@@ -23,6 +25,7 @@ body {
   left: 0;
   padding: 10px 0;
   z-index: 3;
+  background: linear-gradient(to right, #101828, #472477);
 }
 
 .header__container {
@@ -35,38 +38,48 @@ body {
 .logo {
   font-size: 28px;
   font-weight: 700;
+  font-family: monospace;
+}
+
+.logo span {
+  color: #724fa8;
+  transition: all ease 0.3s;
+}
+
+.logo:hover span {
+  text-shadow: 2px 2px 4px rgba(114, 79, 168, 0.5);
+  transition: all ease 0.3s;
 }
 
 .menu {
- flex: 1 1 auto;
- display: flex;
- align-items: center;
- justify-content: space-between;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .menu__list {
   display: flex;
   gap: 25px;
 }
-
+.menu__button,
 .menu__link {
   transition: color 0.3s;
 }
-
+.menu__button:hover,
 .menu__link:hover {
   color: #fff;
 }
 
 .menu__buttons {
- display: flex;
- align-items: center;
- gap: 5px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
-.menu__button {}
-
+.menu__button {
+}
 
 @media (max-width: 512px) {
-
   .header__container {
     flex-direction: column;
     gap: 15px;
@@ -80,5 +93,34 @@ body {
   .logo {
     font-size: 24px;
   }
+}
 
+.main {
+  padding-top: 125px;
+}
+
+.tender {
+  display: grid;
+  gap: 5px;
+}
+
+.tender__container {
+  display: flex;
+  box-shadow: 0 0 10px rgba(16, 24, 40, 0.8);
+}
+
+.tender__column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 0 1 16.66%;
+  min-height: 45px;
+  background: rgba(217, 217, 217, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 15px;
+}
+
+.tender__title {
+  font-weight: 700;
+  font-size: 18px;
 }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IJBH - Главная</title>
+    <title>StateTenders</title>
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/main.css" />
 </head>
@@ -11,37 +11,47 @@
 <div class="wrapper">
     <header class="header">
         <div class="header__container">
-            <a href="/" class="logo">IJBH</a>
-            <nav class="header__menu menu">
-                <ul class="menu__list">
-                    <li><a href="/" class="menu__link">Главная</a></li>
-                    <li><a href="" class="menu__link">О нас</a></li>
-                    <li><a href="" class="menu__link">Связанное</a></li>
-                </ul>
-                <div class="menu__buttons">
-                    <a href="login.html" class="menu__button">Вход</a>
-                    /
-                    <a href="signup.html" class="menu__button">Регистрация</a>
-                </div>
-            </nav>
+            <a href="/" class="logo"><span>State</span>Tenders</a>
+            <a href="" class="menu__link">О нас</a>
+            <div class="menu__buttons">
+                <a href="login.html" class="menu__button">Вход</a>
+                /
+                <a href="signup.html" class="menu__button">Регистрация</a>
+            </div>
         </div>
     </header>
-    <main class="page">
-        <main class="page">
-            <div th:unless="${#lists.isEmpty(tenders)}">
-                <div th:each="tender : ${tenders}" class="tender">
-                    <div class="tender__number"><span>Number:</span> <span th:text="${tender.number}"></span></div>
-                    <div class="tender__companyName"><span>Company Name:</span> <span th:text="${tender.companyName}"></span></div>
-                    <div class="tender__purchaseName"><span>Purchase Name:</span> <span th:text="${tender.purchaseName}"></span></div>
-                    <div class="tender__plannedAmount"><span>Planned Amount:</span> <span th:text="${tender.plannedAmount}"></span></div>
-                    <div class="tender__datePublished"><span>Date Published:</span> <span th:text="${tender.datePublished}"></span></div>
-                    <div class="tender__bidsSubmissionDeadline"><span>Bids Submission Deadline:</span> <span th:text="${tender.bidsSubmissionDeadline}"></span></div>
+    <main class="main">
+        <div th:unless="${#lists.isEmpty(tenders)}" class="tender">
+            <div th:each="tender : ${tenders}" class="tender__container">
+                <div class="tender__column">
+                    <span class="tender__title">Number:</span>
+                    <span th:text="${tender.number}"></span>
+                </div>
+                <div class="tender__column">
+                    <span class="tender__title">Company Name:</span>
+                    <span th:text="${tender.companyName}"></span>
+                </div>
+                <div class="tender__column">
+                    <span class="tender__title">Purchase Name:</span>
+                    <span th:text="${tender.purchaseName}"></span>
+                </div>
+                <div class="tender__column">
+                    <span class="tender__title">Planned Amount:</span>
+                    <span th:text="${tender.plannedAmount}"></span>
+                </div>
+                <div class="tender__column">
+                    <span class="tender__title">Date Published:</span>
+                    <span th:text="${tender.datePublished}"></span>
+                </div>
+                <div class="tender__column">
+                    <span class="tender__title">Bids Submission Deadline:</span>
+                    <span th:text="${tender.bidsSubmissionDeadline}"></span>
                 </div>
             </div>
-            <div th:if="${#lists.isEmpty(tenders)}">
-                <p>No tenders available.</p>
-            </div>
-        </main>
+        </div>
+        <div th:if="${#lists.isEmpty(tenders)}">
+            <p>No tenders available.</p>
+        </div>
     </main>
     <footer class="footer">Footer</footer>
 </div>
