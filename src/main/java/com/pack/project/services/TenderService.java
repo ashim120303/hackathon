@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+
 @Service
 public class TenderService {
 
@@ -41,15 +42,21 @@ public class TenderService {
                     Element row = rows.get(i);
                     Elements cells = row.select("td");
 
-                    Tender tender = new Tender();
-                    tender.setNumber(cells.get(0).ownText());
-                    tender.setCompanyName(cells.get(1).ownText());
-                    tender.setPurchaseName(cells.get(3).select("span.nameTender").text());
-                    tender.setPlannedAmount(cells.get(6).ownText());
-                    tender.setDatePublished(cells.get(7).ownText());
-                    tender.setBidsSubmissionDeadline(cells.get(8).ownText());
+                    String number = cells.get(0).ownText().trim();
 
-                    tenderRepository.save(tender);
+                    // Проверка, существует ли уже запись с таким number
+                    if (!tenderRepository.existsByNumber(number)) {
+                        Tender tender = new Tender();
+                        tender.setNumber(number);
+                        tender.setCompanyName(cells.get(1).ownText().trim());
+                        tender.setPurchaseName(cells.get(3).select("span.nameTender").text().trim());
+                        tender.setPlannedAmount(cells.get(6).ownText().trim());
+                        tender.setDatePublished(cells.get(7).ownText().trim());
+                        tender.setBidsSubmissionDeadline(cells.get(8).ownText().trim());
+
+                        tenderRepository.save(tender);
+                    }
+                    // Если запись с таким number уже существует, она не будет сохранена
                 }
 
                 pageNumber++; // Переход к следующей странице
