@@ -26,6 +26,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests((authorize) -> authorize
                         .requestMatchers("/signup",
                                 "/",
+                                "/about",
                                 "/css/main.css",
                                 "/css/login.css",
                                 "/css/signup.css",
@@ -39,7 +40,7 @@ public class SecurityConfig {
                 )
                 .formLogin(form -> form
                         .loginPage("/login")
-                        .defaultSuccessUrl("/profile", true)
+                        .defaultSuccessUrl("/", true)
                         .failureUrl("/login?error"));
         return http.build();
     }
