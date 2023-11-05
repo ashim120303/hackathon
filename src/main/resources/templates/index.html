@@ -12,39 +12,40 @@
     <header class="header">
         <div class="header__container">
             <a href="/" class="logo"><span>State</span>Tenders</a>
-            <a href="" class="menu__link">О нас</a>
-            <div class="menu__buttons">
-                <a href="login.html" class="menu__button">Вход</a>
-                /
-                <a href="signup.html" class="menu__button">Регистрация</a>
+            <div>
+                <a href="/" class="menu__link">О нас</a>
+                <a href="/" class="menu__link">Форум</a>
+                <a href="login.html" class="menu__button">Войти</a>
             </div>
         </div>
     </header>
     <main class="main">
+        <h1 class="main__title">Доступ к тендорным данным.</h1>
+        <p class="main__sub-title">Мастерство получения тендорных данных: <br/> Ваш путь к выигрышной стратегии.</p>
         <div th:unless="${#lists.isEmpty(tenders)}" class="tender">
             <div th:each="tender : ${tenders}" class="tender__container">
                 <div class="tender__column">
-                    <span class="tender__title">Number:</span>
+                    <span class="tender__title">Номер:</span>
                     <span th:text="${tender.number}"></span>
                 </div>
                 <div class="tender__column">
-                    <span class="tender__title">Company Name:</span>
+                    <span class="tender__title">Название компании:</span>
                     <span th:text="${tender.companyName}"></span>
                 </div>
                 <div class="tender__column">
-                    <span class="tender__title">Purchase Name:</span>
+                    <span class="tender__title">Наименование закупки:</span>
                     <span th:text="${tender.purchaseName}"></span>
                 </div>
                 <div class="tender__column">
-                    <span class="tender__title">Planned Amount:</span>
+                    <span class="tender__title">Планируемая сумма:</span>
                     <span th:text="${tender.plannedAmount}"></span>
                 </div>
                 <div class="tender__column">
-                    <span class="tender__title">Date Published:</span>
+                    <span class="tender__title">Дата публикации:</span>
                     <span th:text="${tender.datePublished}"></span>
                 </div>
                 <div class="tender__column">
-                    <span class="tender__title">Bids Submission Deadline:</span>
+                    <span class="tender__title">Срок подачи заявок:</span>
                     <span th:text="${tender.bidsSubmissionDeadline}"></span>
                 </div>
             </div>
@@ -53,7 +54,6 @@
             <p>No tenders available.</p>
         </div>
     </main>
-    <footer class="footer">Footer</footer>
 </div>
 <script src="/js/main.js"></script>
 </body>

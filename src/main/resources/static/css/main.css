@@ -1,7 +1,6 @@
 body {
   font-family: sans-serif;
   background: #101828;
-
   color: #999;
 }
 
@@ -32,51 +31,55 @@ body {
   min-height: 45px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 25px;
+}
+
+.header__container div{
+  display: flex;
+  align-items: center;
+  gap: 40px;
 }
 
 .logo {
   font-size: 28px;
   font-weight: 700;
   font-family: monospace;
+  transition: all .5s;
 }
 
 .logo span {
   color: #724fa8;
-  transition: all ease 0.3s;
 }
 
-.logo:hover span {
-  text-shadow: 2px 2px 4px rgba(114, 79, 168, 0.5);
-  transition: all ease 0.3s;
+
+.logo:hover{
+  text-shadow: 0 0 8px rgb(114,79,168);
 }
 
-.menu {
-  flex: 1 1 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.menu__list {
-  display: flex;
-  gap: 25px;
-}
-.menu__button,
 .menu__link {
-  transition: color 0.3s;
-}
-.menu__button:hover,
-.menu__link:hover {
+  text-transform: uppercase;
+  font-size: 14px;
   color: #fff;
 }
 
-.menu__buttons {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+.menu__link:hover {
+  text-decoration: underline;
 }
+
 .menu__button {
+  display: block;
+  background: #6438a1;
+  border-radius: 5px;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  color: #fff;
+  transition: all .5s;
+}
+
+.menu__button:hover {
+  box-shadow: 0 0 8px rgb(114,79,168);
+  background: #45286e;
 }
 
 @media (max-width: 512px) {
@@ -85,28 +88,40 @@ body {
     gap: 15px;
   }
 
-  .menu__list {
-    font-size: 14px;
-    gap: 15px;
-  }
-
-  .logo {
-    font-size: 24px;
-  }
 }
 
 .main {
-  padding-top: 125px;
+  padding: 125px 0;
+}
+
+.main__title {
+   text-align: center;
+   font-size: 48px;
+   color: #fff;
+   margin-bottom: 35px;
+   font-weight: 700;
+}
+
+.main__sub-title {
+   text-align: center;
+   font-size: 24px;
+   color: #ccc;
+   margin-bottom: 65px;
 }
 
 .tender {
   display: grid;
-  gap: 5px;
+  gap: 35px;
 }
 
 .tender__container {
   display: flex;
   box-shadow: 0 0 10px rgba(16, 24, 40, 0.8);
+  background: rgba(217, 217, 217, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 10px;
+  min-height: 220px;
+  padding: 15px;
 }
 
 .tender__column {
@@ -114,13 +129,16 @@ body {
   flex-direction: column;
   gap: 15px;
   flex: 0 1 16.66%;
-  min-height: 45px;
-  background: rgba(217, 217, 217, 0.1);
-  backdrop-filter: blur(12px);
-  padding: 15px;
+  padding: 5px;
+}
+
+.tender__column span:not(.tender__title) {
+  color: #777;
 }
 
 .tender__title {
   font-weight: 700;
-  font-size: 18px;
+  font-size: 20px;
+  color: #fff;
+  min-height: 45px;
 }
