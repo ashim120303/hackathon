@@ -159,3 +159,58 @@ body {
   color: #fff;
   min-height: 45px;
 }
+
+.about {
+ height: 100vh;
+}
+
+.about__container {
+}
+
+.about__title {
+  margin-bottom: 35px;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 32px;
+  max-width: 850px;
+  line-height: 145%;
+}
+
+.about__title br {
+  margin-bottom: 15px;
+}
+
+.about__title span,
+.about__title a {
+  color: #724fa8;
+  font-size: 48px;
+}
+
+.contacts {
+ padding: 80px 0;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ gap: 45px;
+}
+
+.contacts__title {
+    font-weight: 700;
+    font-size: 48px
+}
+
+.contacts__list {
+  display: grid;
+  width: 60vw;
+  gap: 15px;
+}
+
+.contacts__link {
+    background: rgba(217, 217, 217, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 10px;
+    min-height: 45px;
+    padding: 15px;
+    display: block;
+}
