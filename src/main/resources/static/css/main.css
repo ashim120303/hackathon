@@ -124,6 +124,23 @@ body {
   padding: 15px;
 }
 
+@media (max-width: 1098px) {
+   .tender__container {
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     gap: 15px;
+   }
+
+   .tender__column {
+     display: flex;
+     flex-direction: column;
+     gap: 15px;
+     flex: 1 1 auto;
+     padding: 15px;
+   }
+}
+
 .tender__column {
   display: flex;
   flex-direction: column;
