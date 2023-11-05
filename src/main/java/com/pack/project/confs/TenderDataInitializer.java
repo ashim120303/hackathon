@@ -7,14 +7,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TenderDataInitializer implements CommandLineRunner {
-
     private final TenderService tenderService;
-
     @Autowired
     public TenderDataInitializer(TenderService tenderService) {
         this.tenderService = tenderService;
     }
-
     @Override
     public void run(String... args) {
         tenderService.parseAndSaveTenders();

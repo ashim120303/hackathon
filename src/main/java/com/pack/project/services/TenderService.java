@@ -8,7 +8,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.io.IOException;
 
 @Service
@@ -56,7 +55,6 @@ public class TenderService {
                 }
                 // Если запись с таким number уже существует, она не будет сохранена
             }
-
         } catch (IOException e) {
             e.printStackTrace();
             // В случае ошибки выводим stack trace и завершаем метод
